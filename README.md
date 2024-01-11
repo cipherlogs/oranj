@@ -21,7 +21,7 @@ Whether you're building a forum, discussion platform, or any other community-dri
 
 ## Customization
 ### Menus
-To create a simple menu, you can define it as follow
+Creating a simple menu in **Oranj** is straightforward. You can define it as follows:
 
 ```javascript
 const menu = [
@@ -33,8 +33,8 @@ const menu = [
 
 <br>
 
-however what's important is that menus will be shaped according to the data that you feed it, for example
-if I want to add switches, nested lists, dividers, buttons ... I can easily just plug them without worrying about anything else
+However, the beauty lies in the flexibility of shaping menus based on the data you provide.
+For instance, adding switches, nested lists, dividers, buttons, and more can be seamlessly incorporated without any hassle:
 
 ```javascript
 const userProfileItems = [
@@ -47,33 +47,31 @@ const userProfileItems = [
 ];
 ```
 
-The result would be something like the following:
+The result is a dynamic menu with various item types:
 
 ![Menu with different item types](./assets/one.gif)
 
 <br>
 <br>
 
-Speaking of nested menus, you can easily create a nested menu within another menu or a nested `DropDownList` with as many levels as you want
-all you have to do, is add `isNested: true` to root. and the rest will be taken care of.
+Nested menus are a breeze to create within another menu or a nested DropDownList with as many levels as needed.
+Just add `isNested: true` to the root, and everything else is taken care of:
 
 ```javascript
 {isNested: true, data: your-data}
 ```
 
-below is an example with of a drop down list that contains another drop down lists
+<br>
+
+Here's an example of a two-level nested drop-down menu:
 
 ![A 2 level nested drop down menu](./assets/two.gif)
 
 <br>
 <br>
 
-We can nest as deeply as we want, not that it is a good UX experience, but just to demonstrate
-how easy it is to compose these components together.
-
-But what will happen if I load it with too much content, does it overflow?
-Each **Oranj** component comes with a safety fallback, so in our previous example if we injected a lot of data into our menu
-instead of overflowing it will just show an `n` item and a `show more`. (of course `n` can be customized)
+You can nest as deeply as required, with each **Oranj** component equipped with a safety fallback. If the content overflows,
+it gracefully shows a limited set of items and a "show more" option (customizable):
 
 ![show more, by default when many items can't fit](./assets/three.gif)
 
@@ -81,9 +79,7 @@ instead of overflowing it will just show an `n` item and a `show more`. (of cour
 <br>
 
 ### Infinite Scroll
-By default the `Post` component will fetch 4 posts at a time, you can customize it to fetch more.
-
-fetching is triggered when the user scrolls to the end of the page.
+The default behavior of the `Post` component is to fetch 4 posts at a time, triggered by scrolling to the end of the page (customizable):
 
 ![triggering infinite scrolling](./assets/four.gif)
 
@@ -91,14 +87,14 @@ fetching is triggered when the user scrolls to the end of the page.
 <br>
 
 ### Stories
-By default, on mobile you swipe for the next or previous stories
+By default, on mobile, you can swipe for the next or previous stories:
 
 ![navigating stories](./assets/five.gif)
 
 <br>
 <br>
 
-however you can customize to show many stories per breakpoint, easily like so
+Customization options include determining how many stories to show per breakpoint:
 
 ```
 {xs: 1, sm: 2, md: 3, lg: 4}
@@ -109,20 +105,20 @@ however you can customize to show many stories per breakpoint, easily like so
 <br>
 <br>
 
-**Stories have hot and cold indicators, from your data it will be determined which stories are getting more attention and which are not**
+**Stories feature hot and cold indicators, dynamically determined based on your data to showcase the level of attention each story receives.**
 
 <br>
 <br>
 
 ### Posts
-Posts are simple, there are four types
+Posts are versatile, coming in four types:
 
 1. Posts with titles only (question posts)
 2. Posts with titles and inner text
 3. Posts with media (images and videos)
 4. Posts that are links
 
-the type of the posts will be determined automatically from your data, nothing is needed to be done.
+The type of each post is automatically determined from your data without requiring any additional configuration.
 
 <br>
 <br>
@@ -136,6 +132,9 @@ $ pnpm install
 $ pnpm dev
 ```
 
+I'm on [Twitter](https://twitter.com/cipherlogs) feel free to follow or reach out if you have any questions or need further assistance!
+
+Happy community building!
 
 
 <br>
@@ -143,10 +142,3 @@ $ pnpm dev
 
 ## License
 This project is licensed under the MIT License.
-
-<br>
-<br>
-
-Feel free to reach out at [Twitter](https://twitter.com/cipherlogs) for any questions or feedback.
-
-Happy community building!
