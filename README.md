@@ -80,9 +80,52 @@ instead of overflowing it will just show an `n` item and a `show more`. (of cour
 <br>
 <br>
 
-### Stories
 ### Infinite Scroll
+By default the `Post` component will fetch 4 posts at a time, you can customize it to fetch more.
+
+fetching is triggered when the user scrolls to the end of the page.
+
+![triggering infinite scrolling](./assets/four.gif)
+
+<br>
+<br>
+
+### Stories
+By default, on mobile you swipe for the next or previous stories
+
+![navigating stories](./assets/five.gif)
+
+<br>
+<br>
+
+however you can customize to show many stories per breakpoint, easily like so
+
+```
+{xs: 1, sm: 2, md: 3, lg: 4}
+```
+
+![how many stories to show per screen size](./assets/six.gif)
+
+<br>
+<br>
+
+**Stories have hot and cold indicators, from your data it will be determined which stories are getting more attention and which are not**
+
+<br>
+<br>
+
 ### Posts
+Posts are simple, there are four types
+
+1. Posts with titles only (question posts)
+2. Posts with titles and inner text
+3. Posts with media (images and videos)
+4. Posts that are links
+
+the type of the posts will be determined automatically from your data, nothing is needed to be done.
+
+<br>
+<br>
 
 ## Getting Started
 
@@ -93,3 +136,17 @@ $ pnpm install
 $ pnpm dev
 ```
 
+
+
+<br>
+<br>
+
+## License
+This project is licensed under the MIT License.
+
+<br>
+<br>
+
+Feel free to reach out at [Twitter](https://twitter.com/cipherlogs) for any questions or feedback.
+
+Happy community building!
