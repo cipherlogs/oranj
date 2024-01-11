@@ -47,10 +47,38 @@ const userProfileItems = [
 ];
 ```
 
-The result would be something like this:
+The result would be something like the following:
 
 ![Menu with different item types](./assets/one.gif)
 
+<br>
+<br>
+
+Speaking of nested menus, you can easily create a nested menu within another menu or a nested `DropDownList` with as many levels as you want
+all you have to do, is add `isNested: true` to root. and the rest will be taken care of.
+
+```javascript
+{isNested: true, data: your-data}
+```
+
+below is an example with of a drop down list that contains another drop down lists
+
+![A 2 level nested drop down menu](./assets/two.gif)
+
+<br>
+<br>
+
+We can nest as deeply as we want, not that it is a good UX experience, but just to demonstrate
+how easy it is to compose these components together.
+
+But what will happen if I load it with too much content, does it overflow?
+Each **Oranj** component comes with a safety fallback, so in our previous example if we injected a lot of data into our menu
+instead of overflowing it will just show an `n` item and a `show more`. (of course `n` can be customized)
+
+![show more, by default when many items can't fit](./assets/three.gif)
+
+<br>
+<br>
 
 ### Stories
 ### Infinite Scroll
