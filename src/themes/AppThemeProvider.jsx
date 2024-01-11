@@ -8,8 +8,7 @@ const darkMode = {};
 const lightMode = {};
 
 const AppThemeProvider = (props) => {
-  // const prefersDarkMode = useMediaQuery ("(prefers-color-scheme: dark)");
-  const prefersDarkMode = false;
+  const prefersDarkMode = useMediaQuery ("(prefers-color-scheme: dark)");
   const [mode, setMode] = useState(prefersDarkMode ? "dark" : "light");
 
   const toggleTheme = () =>

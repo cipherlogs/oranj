@@ -13,9 +13,7 @@ const SideListWrapper = Box;
 function App() {
   return (
     <>
-      <AppWrapper
-        sx={{display: "flex", flexDirection: "column"}}
-      >
+      <AppWrapper sx={{display: "flex", flexDirection: "column"}}>
         <NavBar />
         <Box sx={{display: "flex", flexGrow: 1}}>
           <SideListWrapper
@@ -32,7 +30,15 @@ function App() {
             <Container maxWidth="xl">
               <TrendingVideos />
             </Container>
-            <Container maxWidth="lg" sx={{height: "100%", p: 2}}>
+            <Container
+              maxWidth="lg"
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                height: "100%",
+                p: 2,
+              }}
+            >
               <PopularPosts />
             </Container>
           </Main>

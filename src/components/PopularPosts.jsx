@@ -2,7 +2,7 @@ import {Stack, Paper, Typography, Chip, Avatar} from "@mui/material";
 import DropDownList from "@shared/DropDownList";
 import useLazyLoading from "@hooks/useLazyLoading";
 import Post from "@components/Post";
-import FlashOnIcon from '@mui/icons-material/FlashOn';
+import FlashOnIcon from "@mui/icons-material/FlashOn";
 import {sortItems, posts, communities} from "@data/app.data";
 
 const TrendingCommunities = ({data}) => {
@@ -31,39 +31,23 @@ const PopularPosts = () => {
   const [isLoading, data] = useLazyLoading(posts, 4);
 
   return (
-    <Stack sx={{pt: 4}} direction="row" spacing={2}>
-      <Stack sx={{width: {sm: "100%", lg: "70ch"}}} spacing={2}>
-        <Paper elevation={2}>
-          <DropDownList
-            {...sortItems}
-            primarySx={{variant: "button", color: "text.secondary"}}
-          />
-        </Paper>
-
-        {data.map((item, i) => (
-          <Post key={i} {...item} />
-        ))}
-
-        {isLoading && (
-          <Typography
-            variant="overline"
-            color="text.secondary"
-            align="center"
-          >
-            Loading more ...
-          </Typography>
-        )}
-      </Stack>
-      <Paper
-        sx={{
-          height: "fit-content",
-          maxWidth: "40%",
-          display: {xs: "none", lg: "inline-flex"},
-          p: 2,
-        }}
-      >
-        <TrendingCommunities data={communities} />
+    <Stack sx={{width: {sm: "100%", lg: "100ch"}}} spacing={2}>
+      <Paper elevation={2}>
+        <DropDownList
+          {...sortItems}
+          primarySx={{variant: "button", color: "text.secondary"}}
+        />
       </Paper>
+
+      {data.map((item, i) => (
+        <Post key={i} {...item} />
+      ))}
+
+      {isLoading && (
+        <Typography variant="overline" color="text.secondary" align="center">
+          Loading more ...
+        </Typography>
+      )}
     </Stack>
   );
 };
