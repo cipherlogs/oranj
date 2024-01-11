@@ -29,15 +29,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-      - name: Set up PNPM
-        uses: pnpm/action-setup@v2.4.0
-        with:
-          standalone: true
+
+      - name: Set Node and PNPM
+        uses: wyvox/action-setup-pnpm@v3.0.1     
 
       - name: Install dependencies
         run: pnpm install
