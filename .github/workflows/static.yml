@@ -21,6 +21,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
   # Single deploy job since we're just deploying
   deploy:
     environment:
