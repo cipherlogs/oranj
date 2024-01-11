@@ -35,7 +35,6 @@ function App() {
               sx={{
                 display: "flex",
                 justifyContent: "center",
-                height: "100%",
                 p: 2,
               }}
             >

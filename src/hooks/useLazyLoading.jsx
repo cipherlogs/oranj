@@ -33,11 +33,13 @@ const useLazyLoading = (data, chunkSize) => {
     }
 
     const handleScroll = () => {
-      const reachedBottom =
-        document.documentElement.scrollTop ===
-        document.documentElement.scrollTopMax;
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollTopMax =
+        document.scrollingElement.scrollHeight -
+        document.documentElement.clientHeight;
 
-      if (reachedBottom) fetchOnce();
+
+      if (scrollTop === scrollTopMax) fetchOnce();
     };
 
     window.addEventListener("scroll", handleScroll);
