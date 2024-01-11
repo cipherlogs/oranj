@@ -27,34 +27,22 @@ To create a simple menu, you can define it as follow
 const menu = [
   {text: "Home"},
   {text: "Our Services"},
-  {text: "Contact Us"}
+  {text: "Contact Us", MainIcon: ContactIcon} // Or we can add icons to any item we want
 ]
 ```
 
-You can define the `MainIcon` for each menu item
-
-```javascript
-const menu = [
-  {text: "Home", MainIcon: HomeIcon},
-  {text: "Our Services", MainIcon: MoreIcon},
-  {text: "Contact Us", MainIcon: PhoneIcon},
-]
-```
+<br>
 
 however what's important is that menus will be shaped according to the data that you feed it, for example
 if I want to add switches, nested lists, dividers, buttons ... I can easily just plug them without worrying about anything else
 
 ```javascript
 const userProfileItems = [
-  {type: "section", text: "Settings", data: settings},
-  {type: "divider"},
-
-  {text: "Help Center", MainIcon: HelpIcon},
-  {text: "Careers", MainIcon: AssuredWorkloadIcon},
-  {text: "Press", MainIcon: NewspaperIcon},
-
+  {type: "section", text: "Settings", data: settings}, // section with switches
+  {type: "divider"}, // divider for asthetics
+  {text: "Help Center", MainIcon: HelpIcon}, // Normal menu item
+  {type: "nested", text: "More", MainIcon: ReadMoreIcon, data: moreCategories}, // nested menu within the current menu
   ...
-
   {text: "Log In / Sign Up", MainIcon: LoginIcon},
 ];
 ```
